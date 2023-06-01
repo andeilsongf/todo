@@ -6,9 +6,10 @@ interface CardProps {
   title: string
   description: string
   completed: boolean
+  onClick?: () => void
 }
 
-export function Card({ title, description, completed }: CardProps) {
+export function Card({ title, description, completed, onClick }: CardProps) {
   return (
     <div className="flex min-h-[60px] w-full items-start justify-between gap-2 rounded-lg border border-solid border-gray-400 bg-gray-500 p-4">
       <span className="flex">
@@ -40,9 +41,9 @@ export function Card({ title, description, completed }: CardProps) {
           {description}
         </span>
       </div>
-      <span>
+      <button onClick={onClick}>
         <Image src={trashSvg} width={24} height={24} alt="Trash icon" />
-      </span>
+      </button>
     </div>
   )
 }
