@@ -3,40 +3,15 @@
 import { Header } from '@/app/components/Header'
 import Image from 'next/image'
 import plusSvg from '../../assets/plus.svg'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import 'firebase/database'
-import {
-  collection,
-  query,
-  orderBy,
-  onSnapshot,
-  addDoc,
-  serverTimestamp,
-} from 'firebase/firestore'
+import { collection, addDoc } from 'firebase/firestore'
 
 import { db } from '../../services/firebase'
-import { TodoDTO } from '@/app/dto/todoDTO'
 
 export default function Task() {
-  const q = query(collection(db, 'todos'), orderBy('timestamp', 'desc'))
-
-  const [todos, setTodos] = useState<TodoDTO[]>([])
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
-
-  useEffect(() => {
-    onSnapshot(q, (snapshot) => {
-      return setTodos(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          title,
-          description,
-          completed: false,
-          item: doc.data(),
-        })),
-      )
-    })
-  }, [title, description, q])
 
   const addTodo = (e: any) => {
     e.preventDefault()
@@ -44,7 +19,6 @@ export default function Task() {
       title,
       description,
       completed: false,
-      timestamp: serverTimestamp(),
     })
     setTitle('')
     setDescription('')

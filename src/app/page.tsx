@@ -9,7 +9,14 @@ import { Header } from './components/Header'
 import { TodoDTO } from './dto/todoDTO'
 import { Loading } from './components/Loading'
 
-import { collection, onSnapshot } from 'firebase/firestore'
+import {
+  collection,
+  query,
+  onSnapshot,
+  doc,
+  updateDoc,
+} from 'firebase/firestore'
+
 import { db } from './services/firebase'
 
 export default function Home() {
@@ -18,16 +25,29 @@ export default function Home() {
 
   useEffect(() => {
     setLoading(true)
-    onSnapshot(collection(db, 'todos'), (snapshot) => {
-      setTodos(snapshot.docs.map((doc) => doc.data() as TodoDTO))
+    const q = query(collection(db, 'todos'))
+    onSnapshot(q, (querySnapshot) => {
+      const todosArray: TodoDTO[] = []
+      querySnapshot.forEach((doc) => {
+        todosArray.push({ ...doc.data(), id: doc.id } as TodoDTO)
+      })
+      setTodos(todosArray)
       setLoading(false)
     })
   }, [])
 
+  const toggleComplete = async (todo: TodoDTO) => {
+    await updateDoc(doc(db, 'todos', todo.id), { completed: !todo.completed })
+  }
+
+  // console.log(todoRef)
+
+  // console.log(deleteTodo)
+
   return (
     <main className="h-screen w-full bg-gray-600">
       <Header />
-      {loading ? (
+      {loading === true ? (
         <Loading />
       ) : (
         <div className="m-auto flex w-full max-w-4xl flex-1 flex-col justify-center py-16">
@@ -50,7 +70,7 @@ export default function Home() {
                   title={todo.title}
                   description={todo.description}
                   completed={todo.completed}
-                  // onClick={() => changeTodoCompletion(todo)}
+                  onClick={() => toggleComplete(todo)}
                 />
               ))
             )}
