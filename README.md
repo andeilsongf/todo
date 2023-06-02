@@ -5,28 +5,28 @@
 <p align="center">
     <img width=10% height=50%
         src="https://github.com/andeilsongf/todo/assets/23082238/6c87ab2d-9fa3-4c5e-986c-5233b5268fca"
-        alt="HBO Clone | User">
+        alt="Zero Tasks | ToDo App - Light">
          <img width=10% height=50%
         src="https://github.com/andeilsongf/todo/assets/23082238/753405ad-55f1-4a7f-a745-f4680a942042"
-        alt="HBO Clone | Dashboard">
+        alt="Has task | ToDo App - Light">
     <img width=10% height=50%
         src="https://github.com/andeilsongf/todo/assets/23082238/a946e923-6d54-4a4d-a424-3033e6e1371b"
-        alt="HBO Clone | Dashboard">
+        alt="Tasks Finished | ToDo App - Light">
         <img width=10% height=50%
         src="https://github.com/andeilsongf/todo/assets/23082238/4065c8a1-f2e6-42fe-a77c-d153985c2645"
-        alt="HBO Clone | Dashboard">
+        alt="Register Task | ToDo App - Light">
         <img width=10% height=50%
         src="https://github.com/andeilsongf/todo/assets/23082238/9f74f2ad-a3aa-4791-a308-6694f443a58e"
-        alt="HBO Clone | Dashboard">
+        alt="Zero Tasks | ToDo App - Dark">
     <img width=10% height=50%
         src="https://github.com/andeilsongf/todo/assets/23082238/f5c4705c-d3ca-443d-aa80-f460ac6ae71f"
-        alt="HBO Clone | Dashboard">
+        alt="Has task | ToDo App - Dark">
          <img width=10% height=50%
         src="https://github.com/andeilsongf/todo/assets/23082238/833e6224-288c-400f-a6a7-ec6385f49829"
-        alt="HBO Clone | Dashboard">
+        alt="Tasks Finished | ToDo App - Dark">
          <img width=10% height=50%
         src="https://github.com/andeilsongf/todo/assets/23082238/b1579fcf-2ce6-4bd4-8bcf-cfe133b72061"
-        alt="HBO Clone | Dashboard">
+        alt="Register Task | ToDo App - Dark">
     
 </p>
 
@@ -38,7 +38,7 @@
 
 ## About <a name="about"></a>
 
-HBO Clone web app consuming tmdb api.
+A ToDo Web App
 
 ### Requirements
 
