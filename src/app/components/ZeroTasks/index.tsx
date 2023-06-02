@@ -3,7 +3,7 @@ import clipboardSvg from '../../assets/clipboard.svg'
 
 export function ZeroTasks() {
   return (
-    <div className="flex flex-col items-center justify-center p-16">
+    <div className="flex flex-col items-center justify-center p-4 lg:p-16">
       <Image
         src={clipboardSvg}
         width={56}
