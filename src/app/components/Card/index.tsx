@@ -11,7 +11,7 @@ interface CardProps {
 
 export function Card({ title, description, completed, onClick }: CardProps) {
   return (
-    <div className="flex min-h-[60px] w-full items-start justify-between gap-2 rounded-lg border border-solid border-gray-400 bg-gray-500 p-4">
+    <div className="flex min-h-[60px] w-full items-start justify-between gap-2 rounded-lg border border-solid border-gray-400 bg-white p-4 dark:bg-gray-500">
       <span className="flex">
         {completed === false ? (
           <span className="mt-[3px] h-4 w-4 rounded-full border border-solid border-blue" />
@@ -35,7 +35,7 @@ export function Card({ title, description, completed, onClick }: CardProps) {
 
         <span
           className={`${completed ? 'line-through' : ''} ${
-            completed ? 'text-gray-300' : 'text-gray-100'
+            completed ? 'text-gray-300' : 'text-gray-400 dark:text-gray-200'
           } text-sm`}
         >
           {description}

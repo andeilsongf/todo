@@ -45,16 +45,18 @@ export default function Home() {
   // console.log(deleteTodo)
 
   return (
-    <main className="h-screen w-full bg-gray-600">
+    <main className="h-screen w-full bg-gray-100 dark:bg-gray-600">
       <Header />
       {loading === true ? (
         <Loading />
       ) : (
-        <div className="m-auto flex w-full max-w-4xl flex-1 flex-col justify-center py-16">
+        <div className="m-auto flex w-full max-w-4xl flex-1 flex-col justify-center p-4 lg:py-16">
           <div className="flex w-full justify-between border-b border-solid border-gray-400 pb-8">
             <div className="flex gap-2">
-              <span className="text-sm font-bold text-blue">Total</span>
-              <span className="flex items-center justify-center rounded-full bg-gray-400 px-2 text-xs font-bold text-gray-100">
+              <span className="text-sm font-bold text-gray-300 dark:text-blue">
+                Total
+              </span>
+              <span className="flex items-center justify-center rounded-full bg-darkblue px-2 text-xs font-bold text-gray-100  dark:bg-gray-400">
                 {todos.length}
               </span>
             </div>

@@ -25,7 +25,7 @@ export default function Task() {
   }
 
   return (
-    <main className="flex h-screen w-full flex-col bg-gray-600">
+    <main className="flex h-screen w-full flex-col bg-gray-100 dark:bg-gray-600">
       <Header />
       <div className="m-auto -mt-8 flex w-full max-w-4xl flex-1 justify-center">
         <form action="" className="flex flex-col items-center gap-2">
@@ -34,13 +34,13 @@ export default function Task() {
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="h-14 w-[640px] rounded-lg border border-solid border-gray-700 bg-gray-500 p-4 text-gray-300 placeholder-gray-300 outline-none"
+            className="h-14 w-[640px] rounded-lg border border-solid p-4 text-gray-300 placeholder-gray-300 outline-none dark:border-gray-700 dark:bg-gray-500"
           />
           <textarea
             placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="mb-6 h-32 w-[640px] rounded-lg border border-solid border-gray-700 bg-gray-500 p-4 text-gray-300 placeholder-gray-300 outline-none"
+            className="mb-6 h-32 w-[640px] rounded-lg border border-solid p-4 text-gray-300 placeholder-gray-300 outline-none dark:border-gray-700 dark:bg-gray-500"
           />
           <button
             value="Add"
