@@ -27,20 +27,23 @@ export default function Task() {
   return (
     <main className="flex h-screen w-full flex-col bg-gray-100 dark:bg-gray-600">
       <Header />
-      <div className="m-auto -mt-8 flex w-full max-w-4xl flex-1 justify-center">
-        <form action="" className="flex flex-col items-center gap-2">
+      <div className="m-auto -mt-8 flex w-full flex-1 justify-center p-0 lg:max-w-4xl lg:p-4">
+        <form
+          action=""
+          className="flex w-full flex-col items-center gap-2 p-4 lg:w-fit lg:p-0"
+        >
           <input
             type="text"
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="h-14 w-[640px] rounded-lg border border-solid p-4 text-gray-300 placeholder-gray-300 outline-none dark:border-gray-700 dark:bg-gray-500"
+            className="h-14 w-full rounded-lg border border-solid p-4 text-gray-300 placeholder-gray-300 outline-none dark:border-gray-700 dark:bg-gray-500 lg:w-[640px]"
           />
           <textarea
             placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="mb-6 h-32 w-[640px] rounded-lg border border-solid p-4 text-gray-300 placeholder-gray-300 outline-none dark:border-gray-700 dark:bg-gray-500"
+            className="mb-6 h-32 w-full rounded-lg border border-solid p-4 text-gray-300 placeholder-gray-300 outline-none dark:border-gray-700 dark:bg-gray-500 lg:w-[640px]"
           />
           <button
             value="Add"
